@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+body{
+    background-image: linear-gradient(rgb(190, 190, 255),rgb(225, 238, 255));
+    background-size: 360px 630px;
+
+}
+.ground{
+    background-image: url("ground5.png");
+    background-size: 300px auto;
+
+    width: 363px;
+    height: 90px;
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 550px;
+    left: -2px;
+    z-index: 2;
+}
+
+
+
+.bird{
+
+
+    width: 50px;
+    height: 72px;
+    background-image: url("apple.png");
+    background-repeat: repeat-x;
+    background-size: auto 76px;
+    background-position-x: 0px;
+    position: absolute;
+    left: 155px;
+    top: 477px;
+    transition: all .5s;
+
+  
+}
+
+
+.divleft, .divright
+{
+    width: 180px;
+    height: 230px;
+    position: absolute;
+    /* border: 1px solid green; */
+    top: 400px;
+    left: 180px;
+    background-size: 75px auto ;
+    transition: all 2s;
+    z-index: 5;
+}
+
+.divright{
+    left: 0;
+
+}
+
+.star{
+    width: 40px;
+    height: 40px;
+    background-image: url("star.png");
+    background-size: auto 40px;
+    position: absolute;
+    top: 440px;
+    left: 160px;
+    z-index: 1;
+animation: floating;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+transition: left 1s;
+}
+@keyframes floating {
+    0%{
+        top: 440px;
+        
+    }
+    50%{
+        top: 450px;
+    }
+    100%{
+        top: 440px;
+
+    }
+}
+
+@keyframes shoot {
+    0%{
+        top: 440px;
+        transform: rotate(0deg);
+
+    }
+    50%{
+        top: 50px;
+        transform: rotate(360deg);
+
+    }
+    100%{
+        top: 440px;
+        transform: rotate(720deg);
+
+
+    }
+}
+@keyframes enemy {
+    0%{
+        left: 0;
+
+    }
+    50%{
+left: 300px;
+
+    }
+    100%{
+left: 0;
+
+    }
+}
+.divup
+{
+    width: 360px;
+    height: 400px;
+    position: absolute;
+    /* border: 1px solid green; */
+    top: 0px;
+    left: 0px;
+    background-size: 75px auto ;
+    transition: all 2s;
+    z-index: 5;
+}
+
+h2{
+    position: absolute;
+    top: 270px;
+    left :80px;
+    text-align: center;
+    opacity: 0;
+}
+
+h3{
+    margin: 10px;
+    color: rgba(7, 7, 7, 0.534);
+}
+
+.enemy
+{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-image: url("ghost.png");
+    background-size: 60px auto;
+    top: 100px;
+    left: 0px;
+    opacity: 100%;
+    animation: enemy;
+    animation-duration: 15s;
+    animation-iteration-count: infinite ;
+    animation-timing-function: linear;
+
+}
+
+.shoot{
+    animation: shoot;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
